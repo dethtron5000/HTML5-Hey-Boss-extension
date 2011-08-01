@@ -5,9 +5,42 @@
    </head>
 <body>
 <script type="text/javascript">
+pages = new Array(
+		'bar-graph.html',
+		'pie-graph.html'
+		);
+defaultOptions = {
+	safeWord:"tomato",
+	defaultScreen:"random"
+}
 
+for(i in defaultOptions) {
+	console.log(i);
+	console.log(localStorage[i]);
+	if(localStorage[i] == undefined) {
+		localStorage[i] = defaultOptions[i];
+	}
+	
+}
 console.log(localStorage);
 
+chrome.extension.onRequest.addListener(
+		  function(request, sender, sendResponse) {
+		    console.log(sender.tab ?
+		                "from a content script:" + sender.tab.url :
+		                "from the extension");
+            switch(request.reqKey) {
+            	case 'fetchPrefs':
+					sendResponse({preferences:localStorage});
+                break;  
+                default:
+                	sendResponse({});
+            	  	 
+            }
+
+		  });
 </script>
 </body>
 </html>
+
+

@@ -6,9 +6,6 @@
 </head>
 <script type="text/javascript">
 $(document).ready(function() {
-	defaults = {
-		safeWord = "tomato";
-	}
 	
 	var status = $("div[id=status]");
 	loadscreenSelector = "select[id=screenDefault]";
@@ -19,7 +16,7 @@ $(document).ready(function() {
 		  var safeWordVal = safeWord.val();
 		  
 		  localStorage["defaultScreen"] = screen;
-		  localStorage["safeWord"] = 
+		  localStorage["safeWord"] = safeWordVal;
 		  // Update status to let user know options were saved.
 		 // var status = document.getElementById("status");
 		  status.append("Options Saved.");
@@ -36,18 +33,24 @@ $(document).ready(function() {
 	// Restores select box state to saved value from localStorage.
 	var restore_options = function() {
 	  var defaultscreen = localStorage["defaultScreen"];
-	  var safeword = localStorage["safeWord"];
+	  var safeWordValue = localStorage["safeWord"];
 	  if (defaultscreen !== false) {
 		  $(loadscreenSelector+" option[value='"+defaultscreen+"']").attr('selected', 'selected');
 	  } 
-
-	  if(safeWord !== false) {
-		
+		console.log(safeWordValue)
+	  if(safeWordValue !== false) {
+		  safeWord.val(safeWordValue); 
 	  }
 		  
 	}
 
 	$('button[id="saveButton"]').click(save_options);
+	console.log(localStorage['pages']);
+	pages = jQuery.parseJSON(localStorage['pages']);
+	//console.log(pages);
+	for(i in pages) {
+		$(loadscreenSelector).append('<options value="'+pages[i]+'">'+pages[i]+'</option>')
+	}
 	restore_options();
 }
 );
@@ -60,9 +63,9 @@ $(document).ready(function() {
 Choose a Panic Screen:
 <select id="screenDefault">
  <option value="random">Random</option>
- <option value="graph">Graphs</option>
- <option value="ticker">Ticker</option>
- <option value="wireframe">Wireframe</option>
+ <option value="bar-graph.html">Bar Graph</option>
+ <option value="pie-graph.html">Pie Graph</option>
+
 </select>
 <br>
 <br>

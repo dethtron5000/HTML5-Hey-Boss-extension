@@ -3,8 +3,7 @@
   "version": "1.0",
   "description": "Hide Facebook from your boss.",
   "browser_action": {
-    "default_icon": "icon.png",
-    "popup": "popup.html"
+    "default_icon": "icon.png"
   },
   "background_page":"background.html",
   "options_page":"options.html",
