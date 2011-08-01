@@ -7,20 +7,61 @@
 <script src="../pre3d_path_utils.js"></script>
 <script src="demo_utils.js"></script>
 <script src="lorenz84.js"></script>
-<script>
+<!-- <script>
 function draw_b() {
   var b_canvas = document.getElementById("b");
   var b_context = b_canvas.getContext("2d");
   b_context.fillStyle = "rgb(0,0,0)";
 
 }
-</script>
+</script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() { 
 
+	var c_canvas = document.getElementById("c");
+    var context = c_canvas.getContext("2d");
+
+/* draw vert lines */
+
+for (var x = 0.5; x < 1200; x += 20) { 
+  context.moveTo(x, 0);
+  context.lineTo(x, 800);
+}
+
+/*draw horiz lines */
+
+for (var y = 0.5; y < 800; y += 20) {
+  context.moveTo(0, y);
+  context.lineTo(1200, y); 
+}
+  
+/* give lines a stroke weight */
+
+context.strokeStyle = "rgb(197,197,197)";
+context.stroke();
+
+/*draw horiz lines */
+
+for (var y = 0.5; y < 800; y += 100) {
+  context.moveTo(0, y);
+  context.lineTo(1200, y); 
+  
+}
+
+
+
+
+});
+
+
+
+</script>
 </head>
 <body>
-<canvas id="b" width="1200px" height="800px" style="background-color: rgb(161,161,161);"
+<canvas id="c" width="1200" height="800" style="background-color: rgb(161,161,161)"; >
 
-onload="draw_b();return false">
+
 Sorry, this demo requires a web browser which supports HTML5 canvas!
 </canvas>
 
