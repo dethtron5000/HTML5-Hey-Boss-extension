@@ -7,77 +7,136 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8" />
-  <title>pie-graph</title>
+  <title>pie-graph-movable</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>
-
-    function init() {
+$(document).ready(function(){
 
       var canvas = document.getElementById("canvas");
       var ctx = canvas.getContext("2d");
 
-      draw(ctx);
-    }
+		var originalmagenta = "rgb(220, 17, 122)";
+		var originalred = "rgb(214, 35, 30)";
+		var originalpurple = "rgb(140, 31, 120)";
+		var originalpink = "rgb(240, 153, 188)";
+		var originalorange = "rgb(229, 116, 20)";
 
-    function draw(ctx) {
+      frosting(ctx, originalmagenta);
 
-      // layer1/Path
+      apple(ctx, originalred);
+
+      eggplant(ctx, originalpurple);
+
+      cottoncandy(ctx, originalpink);
+
+      pumpkin(ctx, originalorange);
+
+
+
+
+    function frosting(ctx, thiscolor) {
+
+      // frosting/Path
       ctx.save();
       ctx.beginPath();
-      ctx.moveTo(211.5, 0.0);
-      ctx.bezierCurveTo(94.7, 0.0, 0.0, 89.4, 0.0, 199.7);
-      ctx.bezierCurveTo(0.0, 243.1, 14.7, 283.1, 39.5, 315.9);
-      ctx.lineTo(211.5, 199.7);
-      ctx.lineTo(211.5, 0.0);
+      ctx.moveTo(270.3, 8.8);
+      ctx.lineTo(212.9, 207.1);
+      ctx.lineTo(395.8, 101.7);
+      ctx.bezierCurveTo(368.2, 56.9, 323.5, 23.2, 270.3, 8.8);
       ctx.closePath();
-      ctx.fillStyle = "rgb(229, 116, 20)";
-      ctx.fill();
-
-      // layer1/Path
-      ctx.beginPath();
-      ctx.moveTo(268.5, 7.4);
-      ctx.bezierCurveTo(250.4, 2.6, 231.2, 0.0, 211.5, 0.0);
-      ctx.lineTo(211.5, 199.7);
-      ctx.lineTo(268.5, 7.4);
-      ctx.closePath();
-      ctx.fillStyle = "rgb(240, 153, 188)";
-      ctx.fill();
-
-      // layer1/Path
-      ctx.beginPath();
-      ctx.moveTo(39.5, 315.9);
-      ctx.bezierCurveTo(77.8, 366.5, 140.5, 399.5, 211.5, 399.5);
-      ctx.bezierCurveTo(259.4, 399.5, 303.6, 384.4, 339.1, 359.0);
-      ctx.lineTo(211.5, 199.7);
-      ctx.lineTo(39.5, 315.9);
-      ctx.closePath();
-      ctx.fillStyle = "rgb(140, 31, 120)";
-      ctx.fill();
-
-      // layer1/Path
-      ctx.beginPath();
-      ctx.moveTo(339.1, 359.0);
-      ctx.bezierCurveTo(390.0, 322.5, 422.9, 264.8, 422.9, 199.7);
-      ctx.bezierCurveTo(422.9, 162.4, 412.1, 127.4, 393.2, 97.5);
-      ctx.lineTo(211.5, 199.7);
-      ctx.lineTo(339.1, 359.0);
-      ctx.closePath();
-      ctx.fillStyle = "rgb(214, 35, 30)";
-      ctx.fill();
-
-      // layer1/Path
-      ctx.beginPath();
-      ctx.moveTo(268.5, 7.4);
-      ctx.lineTo(211.5, 199.7);
-      ctx.lineTo(393.2, 97.5);
-      ctx.bezierCurveTo(365.7, 54.1, 321.3, 21.3, 268.5, 7.4);
-      ctx.closePath();
-      ctx.fillStyle = "rgb(220, 17, 122)";
+      ctx.fillStyle = thiscolor;
       ctx.fill();
       ctx.restore();
     }
+
+    function apple(ctx, thiscolor) {
+
+      // apple/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(341.4, 371.5);
+      ctx.bezierCurveTo(392.7, 333.9, 425.8, 274.4, 425.8, 207.3);
+      ctx.bezierCurveTo(425.8, 168.8, 414.9, 132.8, 395.8, 102.0);
+      ctx.lineTo(212.9, 207.3);
+      ctx.lineTo(341.4, 371.5);
+      ctx.closePath();
+      ctx.fillStyle = thiscolor;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function eggplant(ctx, thiscolor) {
+
+      // eggplant/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(40.6, 324.9);
+      ctx.bezierCurveTo(79.3, 377.1, 142.4, 411.1, 213.8, 411.1);
+      ctx.bezierCurveTo(262.1, 411.1, 306.6, 395.6, 342.3, 369.4);
+      ctx.lineTo(213.8, 205.2);
+      ctx.lineTo(40.6, 324.9);
+      ctx.closePath();
+      ctx.fillStyle = thiscolor;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function cottoncandy(ctx, thiscolor) {
+
+      // cottoncandy/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(270.3, 7.6);
+      ctx.bezierCurveTo(252.1, 2.7, 232.8, 0.0, 212.9, 0.0);
+      ctx.lineTo(212.9, 205.9);
+      ctx.lineTo(270.3, 7.6);
+      ctx.closePath();
+      ctx.fillStyle = thiscolor;
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function pumpkin(ctx, thiscolor) {
+
+      // pumpkin/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(212.9, 0.2);
+      ctx.bezierCurveTo(95.3, 0.2, 0.0, 92.4, 0.0, 206.1);
+      ctx.bezierCurveTo(0.0, 250.8, 14.8, 292.1, 39.7, 325.8);
+      ctx.lineTo(212.9, 206.1);
+      ctx.lineTo(212.9, 0.2);
+      ctx.closePath();
+      ctx.fillStyle = thiscolor;
+      ctx.fill();
+      ctx.restore();
+    }
+
+   $('#changecolor').click(function(){
+		
+		var newmagenta = "rgb(220, 17, 122)";
+		var newred = "rgb(214, 35, 30)";
+		var newpurple = "rgb(140, 31, 120)";
+		var newpink = "rgb(240, 153, 188)";
+		var neworange = "rgb(229, 116, 20)";
+		
+		frosting(ctx, newred);
+
+      apple(ctx, newpurple);
+
+      eggplant(ctx, newpink);
+
+      cottoncandy(ctx, neworange);
+
+      pumpkin(ctx, newmagenta);
+
+	});
+
+});
   </script>
+
 	<style>
-		body {font-family: Arial, Sans Serif; text-align: center; padding: 20px;}
+		body {font-family: Arial, Sans Serif; text-align: center; padding: 20px; background-color: #FFF;}
 		section {margin: auto 0; padding: 20px;}
 		h1 {text-align: left; margin-left: 40px; color: #666;}
 		.pie-data {margin-right: 20px; outline: none; width: 100px; float: left;}
@@ -90,11 +149,12 @@
 		.red {border-left: 15px solid #D7241F;}
 		.purple {border-left: 15px solid #8D2079;}
 	</style>
+	
  </head>
- <body onload="init()">
+ <body>
 	<section>
 		<h1 contenteditable="true">Performance Data</h1>
-	    <canvas id="canvas" width="423" height="400"></canvas>
+   		<canvas id="canvas" width="426" height="412"></canvas>
 		<ul contenteditable="true" class="pie-data">  
 			<li class="orange"> lorem ipsum </li>  
 			<li class="pink"> lorem ipsum </li>  
@@ -102,6 +162,7 @@
 			<li class="red"> lorem ipsum </li>  
 			<li class="purple"> lorem ipsum </li> 
 		</ul>
+		<button id='changecolor'>Q2</button>
 	</section>
  </body>
 </html>
