@@ -49,7 +49,6 @@ for (var y = 0.5; y < 800; y += 100) {
   
 }
 
-
    function octagon(ctx) {
 
       // octagon/Path
@@ -114,9 +113,38 @@ for (var y = 0.5; y < 800; y += 100) {
       ctx.lineTo(248.8, 40.3);
       ctx.stroke();
       ctx.restore();
-    }
+}
     
-    octagon(context);
+   octagon(context); 
+
+
+function circle(ctx) {
+
+    
+      ctx.strokeStyle = "rgb(197, 60, 40)";
+      ctx.lineJoin = "miter";
+      ctx.miterLimit = 4.0;
+      ctx.stroke();
+
+     
+      // octagon/Path
+      ctx.beginPath();
+      ctx.moveTo(134.4, 732.9);
+      ctx.lineTo(800, 120);
+      ctx.lineTo(400, 120);
+      ctx.lineTo(850, 40);
+      ctx.lineTo(1300, 40);
+      ctx.lineTo(285, 40);
+      ctx.lineTo(850, 470);
+      ctx.stroke();
+      ctx.restore();
+
+    }
+         
+    
+    circle(context);
+
+
 
 });
 
