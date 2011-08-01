@@ -1,0 +1,18 @@
+{
+  "name": "Boss Panic",
+  "version": "1.0",
+  "description": "Hide Facebook from your boss.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "popup.html"
+  },
+  "background_page":"background.html",
+  "options_page":"options.html",
+  "content_scripts":[
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-1.6.1.min.js","contentOverlay.js"],
+      "css": ["overlay.css"]
+    }
+   ]
+}
