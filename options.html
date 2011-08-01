@@ -6,13 +6,20 @@
 </head>
 <script type="text/javascript">
 $(document).ready(function() {
-	status = $("div[id=status]");
+	defaults = {
+		safeWord = "tomato";
+	}
+	
+	var status = $("div[id=status]");
 	loadscreenSelector = "select[id=screenDefault]";
+	safeWord = $("input[id=safeWord]");
 	var save_options = function() {
 		  var loadscreen = $(loadscreenSelector);
 		  var screen = loadscreen.val();
+		  var safeWordVal = safeWord.val();
+		  
 		  localStorage["defaultScreen"] = screen;
-
+		  localStorage["safeWord"] = 
 		  // Update status to let user know options were saved.
 		 // var status = document.getElementById("status");
 		  status.append("Options Saved.");
@@ -29,10 +36,15 @@ $(document).ready(function() {
 	// Restores select box state to saved value from localStorage.
 	var restore_options = function() {
 	  var defaultscreen = localStorage["defaultScreen"];
-	  if (!defaultscreen) {
-	    return;
+	  var safeword = localStorage["safeWord"];
+	  if (defaultscreen !== false) {
+		  $(loadscreenSelector+" option[value='"+defaultscreen+"']").attr('selected', 'selected');
+	  } 
+
+	  if(safeWord !== false) {
+		
 	  }
-	  $(loadscreenSelector+" option[value='"+defaultscreen+"']").attr('selected', 'selected');
+		  
 	}
 
 	$('button[id="saveButton"]').click(save_options);
@@ -52,6 +64,9 @@ Choose a Panic Screen:
  <option value="ticker">Ticker</option>
  <option value="wireframe">Wireframe</option>
 </select>
+<br>
+<br>
+<input type="text" id="safeWord" />
 
 <br>
 <button id="saveButton">Save</button>

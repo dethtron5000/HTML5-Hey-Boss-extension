@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<!-- Created with Ai->Canvas Export Plug-In Version 1.0 (Mac) -->
+<!-- By Mike Swanson (http://blogs.msdn.com/mswanson/)        -->
+<!-- and MIX Online  (http://visitmix.com/)                   -->
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <title>pie-graph</title>
+  <script>
+
+    function init() {
+
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      draw(ctx);
+    }
+
+    function draw(ctx) {
+
+      // layer1/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(211.5, 0.0);
+      ctx.bezierCurveTo(94.7, 0.0, 0.0, 89.4, 0.0, 199.7);
+      ctx.bezierCurveTo(0.0, 243.1, 14.7, 283.1, 39.5, 315.9);
+      ctx.lineTo(211.5, 199.7);
+      ctx.lineTo(211.5, 0.0);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(229, 116, 20)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(268.5, 7.4);
+      ctx.bezierCurveTo(250.4, 2.6, 231.2, 0.0, 211.5, 0.0);
+      ctx.lineTo(211.5, 199.7);
+      ctx.lineTo(268.5, 7.4);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(240, 153, 188)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(39.5, 315.9);
+      ctx.bezierCurveTo(77.8, 366.5, 140.5, 399.5, 211.5, 399.5);
+      ctx.bezierCurveTo(259.4, 399.5, 303.6, 384.4, 339.1, 359.0);
+      ctx.lineTo(211.5, 199.7);
+      ctx.lineTo(39.5, 315.9);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(140, 31, 120)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(339.1, 359.0);
+      ctx.bezierCurveTo(390.0, 322.5, 422.9, 264.8, 422.9, 199.7);
+      ctx.bezierCurveTo(422.9, 162.4, 412.1, 127.4, 393.2, 97.5);
+      ctx.lineTo(211.5, 199.7);
+      ctx.lineTo(339.1, 359.0);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(214, 35, 30)";
+      ctx.fill();
+
+      // layer1/Path
+      ctx.beginPath();
+      ctx.moveTo(268.5, 7.4);
+      ctx.lineTo(211.5, 199.7);
+      ctx.lineTo(393.2, 97.5);
+      ctx.bezierCurveTo(365.7, 54.1, 321.3, 21.3, 268.5, 7.4);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(220, 17, 122)";
+      ctx.fill();
+      ctx.restore();
+    }
+  </script>
+	<style>
+		body {font-family: Arial, Sans Serif; text-align: center; padding: 20px;}
+		section {margin: auto 0; padding: 20px;}
+		h1 {text-align: left; margin-left: 40px; color: #666;}
+		.pie-data {margin-right: 20px; outline: none; width: 100px; float: left;}
+		.pie-data li {display: block; font-size: 11px; padding: 3px; margin: 0 0 10px 0;}
+		.pie-data li:hover {background-color: #C0F3FC;}
+		
+		.orange {border-left: 15px solid #E67515;}
+		.pink {border-left: 15px solid #F19ABD;}
+		.magenta {border-left: 15px solid #DD127B;}
+		.red {border-left: 15px solid #D7241F;}
+		.purple {border-left: 15px solid #8D2079;}
+	</style>
+ </head>
+ <body onload="init()">
+	<section>
+		<h1 contenteditable="true">Performance Data</h1>
+	    <canvas id="canvas" width="423" height="400"></canvas>
+		<ul contenteditable="true" class="pie-data">  
+			<li class="orange"> lorem ipsum </li>  
+			<li class="pink"> lorem ipsum </li>  
+			<li class="magenta"> lorem ipsum </li> 
+			<li class="red"> lorem ipsum </li>  
+			<li class="purple"> lorem ipsum </li> 
+		</ul>
+	</section>
+ </body>
+</html>
