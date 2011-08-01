@@ -28,7 +28,7 @@ $(document).ready(function() {
 	
 		x = document.createElement('div');
 		x.className = "divwrapper";
-		x.innerHTML = "<input type='button' value='open' id='openButton'/>";
+		x.innerHTML = "<input type='button' value='open' id='openButton'/><input type='button' value='close' id='closeButton'/>";
 		$(x).insertBefore($('body :first'));		
 
 		$('.divwrapper').append(speechform);
@@ -37,6 +37,7 @@ $(document).ready(function() {
         $('#main-input').bind('speechchange', function() { logWords(this.value) });			
 		
 		$('input[id=openButton]').click(openIframe);
+		$('input[id=closeButton]').click(closeIframe);
 	};
 
 	
