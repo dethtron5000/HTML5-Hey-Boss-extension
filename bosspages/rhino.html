@@ -182,12 +182,22 @@ arrow(context);
 </script>
 </head>
 <body>
-<canvas id="c" width="1200" height="800" style="background-color: rgb(161,161,161)"; >
-
-
+<canvas id="c" width="1200" height="800" style="background-color: rgb(161,161,161); z-index: -100; position: relative;" >
+<img id="cat" src="img/model1.png" alt="incredible" width="" height="">
 Sorry, this demo requires a web browser which supports HTML5 canvas!
 </canvas>
 
+
+
+
+<script>
+window.onload = function() {
+  var canvas = document.getElementById("c");
+  var context = canvas.getContext("2d");
+  var cat = document.getElementById("cat");
+  context.drawImage(cat, 200, 200);
+};
+</script>
 
 
 
