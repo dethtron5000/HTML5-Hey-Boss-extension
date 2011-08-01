@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-	pages = ['bar-graph.html','pie-graph.html']
+	pages = ['bar-graph.html','pie-graph.html','rhino.html']
 	
 	         
 
@@ -16,13 +16,28 @@ $(document).ready(function() {
 		}
 		realsource = chrome.extension.getURL('bosspages/'+docSrc);
 		
+
+		
 		z = document.createElement('iframe');
+		z.id = 'mainIframe';
 		z.className = "wrapper";
 		z.src = realsource;
 
-		$(z).insertBefore($('body :first'));			
+		$(z).insertBefore($('body :first'));
+		
+		x = document.createElement('div');
+		x.innerHTML = "<input type='button' value='open' id='openButton'/>";
+		$(x).insertBefore($('body :first'));		
+		
+		$('input[id=openButton]').click(openIframe);
 	};
 
+	
+	var openIframe = function(e) {
+		console.log($('input[id=mainIframe]'));
+		$('iframe[id=mainIframe]').css('height','1500px');
+		//$('iframe[id=mainIframe]').attr('height','100%');
+	};
 	
 	
 	var fetchRandom = function(pageArray) {
