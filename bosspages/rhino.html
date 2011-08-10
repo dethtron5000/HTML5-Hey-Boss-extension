@@ -24,14 +24,14 @@ $(document).ready(function() {
 
 /* draw vert lines */
 
-for (var x = 0.5; x < 1200; x += 20) { 
+for (var x = 0.5; x < 1200; x += 100) { 
   context.moveTo(x, 0);
   context.lineTo(x, 800);
 }
 
 /*draw horiz lines */
 
-for (var y = 0.5; y < 800; y += 20) {
+for (var y = 0.5; y < 800; y += 100) {
   context.moveTo(0, y);
   context.lineTo(1200, y); 
 }
@@ -120,15 +120,39 @@ for (var y = 0.5; y < 800; y += 100) {
 
 function circle(ctx) {
 
+for (var x = 0.5; x < 1200; x += 100) { 
+  ctx.moveTo(x, 0);
+  ctx.lineTo(x, 800);
+}
+
+/*draw horiz lines */
+
+for (var y = 0.5; y < 800; y += 100) {
+  ctx.moveTo(0, y);
+  ctx.lineTo(1200, y); 
+}
+  
+/* give lines a stroke weight */
+
+ctx.strokeStyle = "rgb(197,60, 40)";
+ctx.stroke();
+
+/*draw horiz lines */
+
+for (var y = 0.5; y < 800; y += 100) {
+  ctx.moveTo(0, y);
+  ctx.lineTo(1200, y); 
+
+    //It's def NOT a circle! dumb red lines
     
-      ctx.strokeStyle = "rgb(197, 60, 40)";
+   /*   ctx.strokeStyle = "rgb(197, 60, 40)";
       ctx.lineJoin = "miter";
       ctx.miterLimit = 4.0;
       ctx.stroke();
-
+*/
      
       // octagon/Path
-      ctx.beginPath();
+/*      ctx.beginPath();
       ctx.moveTo(134.4, 732.9);
       ctx.lineTo(800, 120);
       ctx.lineTo(400, 120);
@@ -138,13 +162,17 @@ function circle(ctx) {
       ctx.lineTo(850, 470);
       ctx.stroke();
       ctx.restore();
-
+*/
     }
          
     
     circle(context);
 
+
 function arrow(ctx) {
+
+// sorry, def NOT an arrow, just jazzy green lines :-/
+
 ctx.stroke();
 ctx.beginPath();
 
@@ -195,7 +223,7 @@ window.onload = function() {
   var canvas = document.getElementById("c");
   var context = canvas.getContext("2d");
   var cat = document.getElementById("cat");
-  context.drawImage(cat, 200, 200);
+  context.drawImage(cat, 150, 150);
 };
 </script>
 
